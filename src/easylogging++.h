@@ -6507,9 +6507,9 @@ public:
 #undef CCHECK_NOTNULL
 #undef CCHECK_STRCASEEQ
 #undef CCHECK_STRCASENE
-#undef CHECK
+//#undef CHECK
 #undef PCHECK
-#undef CHECK_EQ
+/*#undef CHECK_EQ
 #undef CHECK_NE
 #undef CHECK_LT
 #undef CHECK_GT
@@ -6518,10 +6518,10 @@ public:
 #undef CHECK_BOUNDS
 #undef CHECK_NOTNULL
 #undef CHECK_STRCASEEQ
-#undef CHECK_STRCASENE
+#undef CHECK_STRCASENE*/
 #define CCHECK(condition, ...) CLOG_IF(!(condition), FATAL, __VA_ARGS__) << "Check failed: [" << #condition << "] "
 #define CPCHECK(condition, ...) CPLOG_IF(!(condition), FATAL, __VA_ARGS__) << "Check failed: [" << #condition << "] "
-#define CHECK(condition) CCHECK(condition, ELPP_CURR_FILE_LOGGER_ID)
+//#define CHECK(condition) CCHECK(condition, ELPP_CURR_FILE_LOGGER_ID)
 #define PCHECK(condition) CPCHECK(condition, ELPP_CURR_FILE_LOGGER_ID)
 #define CCHECK_EQ(a, b, ...) CCHECK(a == b, __VA_ARGS__)
 #define CCHECK_NE(a, b, ...) CCHECK(a != b, __VA_ARGS__)
@@ -6530,13 +6530,14 @@ public:
 #define CCHECK_LE(a, b, ...) CCHECK(a <= b, __VA_ARGS__)
 #define CCHECK_GE(a, b, ...) CCHECK(a >= b, __VA_ARGS__)
 #define CCHECK_BOUNDS(val, min, max, ...) CCHECK(val >= min && val <= max, __VA_ARGS__)
-#define CHECK_EQ(a, b) CCHECK_EQ(a, b, ELPP_CURR_FILE_LOGGER_ID)
+/*#define CHECK_EQ(a, b) CCHECK_EQ(a, b, ELPP_CURR_FILE_LOGGER_ID)
 #define CHECK_NE(a, b) CCHECK_NE(a, b, ELPP_CURR_FILE_LOGGER_ID)
 #define CHECK_LT(a, b) CCHECK_LT(a, b, ELPP_CURR_FILE_LOGGER_ID)
 #define CHECK_GT(a, b) CCHECK_GT(a, b, ELPP_CURR_FILE_LOGGER_ID)
 #define CHECK_LE(a, b) CCHECK_LE(a, b, ELPP_CURR_FILE_LOGGER_ID)
 #define CHECK_GE(a, b) CCHECK_GE(a, b, ELPP_CURR_FILE_LOGGER_ID)
 #define CHECK_BOUNDS(val, min, max) CCHECK_BOUNDS(val, min, max, ELPP_CURR_FILE_LOGGER_ID)
+*/
 namespace el {
 namespace base {
 namespace utils {
